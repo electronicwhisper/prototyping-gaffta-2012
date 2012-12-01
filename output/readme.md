@@ -2,8 +2,6 @@
 
 Making things show up, hide, and change on the page.
 
-You have a few options for this.
-
 ## DOM / CSS manipulation
 
 You can directly [change the HTML](http://api.jquery.com/html/) on the page. You can [change attributes](http://api.jquery.com/attr/) (e.g. the `src` of an `img`). Also [changing, adding, and removing `class`es](http://api.jquery.com/category/manipulation/class-attribute/) on an element can be very effective.
