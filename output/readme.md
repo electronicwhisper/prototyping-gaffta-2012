@@ -34,7 +34,7 @@ Canvas and SVG are the main ways to draw arbitrary shapes (instead of just the r
 
 ### Similarities
 
-Both Canvas and SVG use a model similar to Adobe Illustrator for describing shapes. A shape is defined as a *path*, which is composed of straight and curved (*arcs* and *beziers*) line segments. A path can be *filled* and/or *stroked*.
+Both Canvas and SVG use a model similar to Adobe Illustrator for describing shapes. A shape is defined as a *path*, which is composed of straight and curved line segments. A path can be *filled* and/or *stroked*.
 
 Also, both use the same style of transformations. Transformations are a combination of *translations*, *rotations*, and *scaling*. Transformations can also be specified using a *matrix*.
 
