@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3 Transforms Examples</title>
+<style>
+#test1 {
+  width: 300px;
+  height: 300px;
+  background-color: #ff0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+}
+#test1:hover {
+  background-color: #f90;
+}
+</style>
+</head>
+<body>
+
+<div id="test1">Here's a div</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+<script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/plugins/prefixfree.jquery.js"></script>
+<script>
+
+var time = 0;
+setInterval(function () {
+  time += 1;
+  var rotation = time;
+  var scale = Math.cos(time / 40) + 1;
+  
+  $("#test1").css("transform", "rotate("+ rotation +"deg) scale("+ scale +")");
+}, 30);
+
+
+</script>
+
+</body>
+</html>

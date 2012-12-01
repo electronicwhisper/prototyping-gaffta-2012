@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3 Transforms Examples</title>
+<style>
+.tester {
+  width: 150px; height: 150px;
+  float: left;
+  background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/322px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg);
+/*  background-color: #ff0;*/
+}
+
+.tester:hover {
+  opacity: 0.1;
+}
+</style>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+<script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/plugins/prefixfree.jquery.js"></script>
+<script>
+
+var num = 50;
+for (var i = 0; i < num; i++) {
+  $("body").append($("<div class='tester'>"+ i +"</div>"));
+}
+
+var time = 0;
+setInterval(function () {
+  time += 1;
+  var rotation = time * 3;
+  var scale = Math.cos(time / 30) + 1;
+  
+  $(".tester").css("transform", "rotate("+ rotation +"deg) scale("+ scale +") translateZ(0)");
+  /*
+  Adding the translateZ(0) at the end forces the browser to use the GPU to render the image.
+  This can *sometimes* improve performance.
+  http://www.html5rocks.com/en/tutorials/speed/html5/
+  */
+}, 30);
+
+
+</script>
+
+</body>
+</html>

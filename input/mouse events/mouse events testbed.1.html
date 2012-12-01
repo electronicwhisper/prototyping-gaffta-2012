@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mouse Events Testbed</title>
+<style type="text/css">
+body {
+  font-family: Optima;
+}
+</style>
+</head>
+<body>
+
+<div style="position: absolute; top: 40px; left: 40px; right: 40px; bottom: 40px;">
+  
+  <p>Log events:</p>
+  <ul>
+    <li><input type="checkbox" id="mousedown" checked /> mousedown</li>
+    <li><input type="checkbox" id="mouseup" checked /> mouseup</li>
+    <li><input type="checkbox" id="click" checked /> click</li>
+    <li><input type="checkbox" id="mousemove" /> mousemove</li>
+    <li><input type="checkbox" id="mouseover" /> mouseover</li>
+    <li><input type="checkbox" id="mouseout" /> mouseout</li>
+    <li><input type="checkbox" id="mouseenter" /> mouseenter</li>
+    <li><input type="checkbox" id="mouseleave" /> mouseleave</li>
+  </ul>
+  
+  <div class="tester" style="background-color: #ff9; position: absolute; top: 0px; left: 33.333%; right: 0px; bottom: 0px;">
+    <div class="tester" style="background-color: #fc6; position: absolute; top: 40px; left: 50%; right: 40px; bottom: 40px;">
+    
+    </div>
+  </div>
+  
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://underscorejs.org/underscore.js"></script>
+<script>
+
+var mouseEventNames = ["mousedown", "mouseup", "click", "mousemove", "mouseover", "mouseout", "mouseenter", "mouseleave"];
+
+_.each(mouseEventNames, function (eventName) {
+  $(".tester").each(function () {
+    var $el = $(this);
+    $el.on(eventName, function (e) {
+      if ($("#"+eventName).attr("checked")) {
+        console.log(eventName);
+      }
+    });
+  });
+});
+
+</script>
+</body>
+</html>
