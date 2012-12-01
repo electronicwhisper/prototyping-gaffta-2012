@@ -1,0 +1,2 @@
+Reset vertical scroll for each page when scroll is done
+Wrap (cycle) listings

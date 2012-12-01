@@ -1,0 +1,65 @@
+shadow()
+  box-shadow: 0px 2px 7px rgba(0,0,0,0.5)
+
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html, body
+  height: 100%
+
+body
+  font-family: helvetica neue
+  padding: 0
+  margin: 0
+  background-color: #ddd
+
+#wrapper
+  width: 100%
+  overflow: hidden
+  position: absolute
+  top: 0px
+  bottom: 0px
+
+#slider
+  width: 200%
+  height: 100%
+
+.page
+  width: 50%
+  float: left
+  padding: 6px
+
+
+#slider, .page
+  -webkit-transform:translate3d(0,0,0)
+
+
+
+
+
+.house
+  padding: 10px
+  background-color: #fff
+  shadow()
+  overflow: hidden
+  .image
+    margin-bottom: 10px
+  .address
+    text-align: center
+    font-size: 24px
+    font-weight: 700
+    margin-bottom: 10px
+  .price
+    float: left
+    padding-left: 10px
+  .bedbath
+    text-align: right
+    padding-right: 10px
+    img
+      opacity: 0.9
+    .slash
+      color: #999
+  .price, .bedbath
+    font-size: 18px
+    font-weight: 300
+    color: #333

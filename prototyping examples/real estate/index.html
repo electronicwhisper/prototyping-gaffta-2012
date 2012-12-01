@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<title>ScoutMap Phone Mockup</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+<script type="text/javascript" src="twis.js"></script>
+<script>
+function loaded() {
+  new TWIS('#wrapper', {
+    onScrollEnd: function () {
+      // document.querySelector('#indicator > li.active').className = '';
+      // document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
+      console.log("scrollEnd", this)
+    }
+  });
+  
+  
+}
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+window.addEventListener('load', loaded, false);
+</script>
+
+</head>
+<body>
+
+<div id="wrapper">
+  <div id="slider">
+    
+    <div class="page">
+      <div class="house">
+        <div class="image">
+          <img src="40580205_0.jpg" width="100%" />
+        </div>
+        <div class="address">1045 Siler Pl.</div>
+        <div class="price">$699,000</div>
+        <div class="bedbath">3 <img src="bed.png" height="17" /> <span class="slash">/</span> 2&frac12; <img src="bath.png" height="17" /></div>
+      </div>
+      
+      <!-- more info here.. -->
+    </div>
+    
+    <div class="page">
+      <div class="house">
+        <div class="image">
+          <img src="40581852_0.jpg" width="100%" />
+        </div>
+        <div class="address">1353 Channing Way</div>
+        <div class="price">$495,000</div>
+        <div class="bedbath">2 <img src="bed.png" height="17" /> <span class="slash">/</span> 1 <img src="bath.png" height="17" /></div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+</body>
+</html>
