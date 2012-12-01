@@ -13,7 +13,7 @@
 </script>
 </head>
 <body>
-  <div id="test" style="background-color: #ff0" class="big important">asdf</div>
+  <div id="test" class="big important">asdf</div>
   <div id="test2">This is another div</div>
   <div id="test3" class="big">another big one</div>
 
@@ -21,9 +21,17 @@
 
 <script>
 
-$("#test").on("click", function () {
-  console.log("I got clicked!");
-});
+var toby = "Toby Schachman";
+
+function makeBold(element) {
+  element.css("font-weight", "bold");
+}
+
+// var makeBold = function (element) {
+//   element.css("font-weight", "bold");
+// }
+
+
 
 </script>
 
