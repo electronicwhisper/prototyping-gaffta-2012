@@ -17,8 +17,6 @@ var ctx = canvas.getContext("2d");
 
 
 $(document).on("mousemove", function (e) {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
   ctx.beginPath();
   ctx.moveTo(canvas.width / 2, canvas.height);
   ctx.lineTo(e.pageX, e.pageY);
