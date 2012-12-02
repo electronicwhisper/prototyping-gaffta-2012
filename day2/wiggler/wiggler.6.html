@@ -20,14 +20,6 @@ var numSegments = 50;
 
 var mouseHistory = [];
 
-// prepopulate the mouse history
-for (var i = 0; i < numSegments; i++) {
-  mouseHistory.push({
-    x: canvas.width / 2,
-    y: canvas.height / 2
-  });
-}
-
 $(document).on("mousemove", function (e) {
   mouseHistory.push({
     x: e.pageX,
@@ -41,7 +33,7 @@ $(document).on("mousemove", function (e) {
   // mouseHistory.push([e.pageX, e.pageY]);
   
   
-  // console.log(mouseHistory);
+  console.log(mouseHistory);
   
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   
@@ -64,8 +56,8 @@ $(document).on("mousemove", function (e) {
     var x = startX * (1 - ratio) + endX * (ratio);
     var y = startY * (1 - ratio) + endY * (ratio);
     
-    // x += Math.random() * 10;
-    // y += Math.random() * 10;
+    x += Math.random() * 10;
+    y += Math.random() * 10;
     
     ctx.lineTo(x, y);
   }
@@ -73,7 +65,7 @@ $(document).on("mousemove", function (e) {
   
   
   
-  ctx.lineWidth = 50;
+  ctx.lineWidth = 10;
   ctx.lineCap = "round";
   
   ctx.stroke();
