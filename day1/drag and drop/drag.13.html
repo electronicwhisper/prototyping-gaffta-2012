@@ -1,0 +1,49 @@
+<html>
+<body>
+
+<div id="mover" style="position: absolute; top: 0px; left: 0px; width: 200px; height: 200px; background-color: #f00">test</div>
+<div id="mover2" style="position: absolute; top: 0px; left: 300px; width: 200px; height: 200px; background-color: #00f">test 2</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script>
+
+
+function makeDraggable(element) {
+  var dragging = false;
+  var offsetX;
+  var offsetY;
+
+
+  element.on("mousedown", function (e) {
+    var position = element.offset();
+
+    dragging = true;
+    offsetX = e.pageX - position.left;
+    offsetY = e.pageY - position.top;
+  });
+
+  $(document).on("mousemove", function (e) {
+    if (dragging) {
+      var x = e.pageX - offsetX;
+      var y = e.pageY - offsetY;
+      element.css("left", x);
+      element.css("top", y);
+    }
+  });
+
+  $(document).on("mouseup", function (e) {
+    dragging = false;
+  });
+}
+
+makeDraggable($("#mover"));
+
+
+
+
+
+</script>
+
+</body>
+</html>

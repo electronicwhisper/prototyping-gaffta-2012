@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<div id="mover" style="position: absolute; top: 0px; left: 0px; width: 200px; height: 200px; background-color: #f00">test</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script>
+
+
+function m(element, e, scale) {
+  var x = e.pageX * scale;
+  var y = e.pageY * scale;
+  
+  element.css("left", x);
+  element.css("top", y);
+}
+
+
+$(document).on("mousemove", function (e) {
+  m($("#mover"), e, 3);
+});
+
+
+</script>
+
+</body>
+</html>

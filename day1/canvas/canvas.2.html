@@ -1,0 +1,33 @@
+<html>
+<body>
+
+<canvas width="600" height="600" id="c"></canvas>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+
+var canvas = $("#c")[0];
+var ctx = canvas.getContext("2d");
+
+function triangle(x1, y1, x2, y2, x3, y3) {
+  ctx.beginPath();
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x2, y2);
+  ctx.lineTo(x3, y3);
+  ctx.lineTo(x1, y1);
+  ctx.stroke();
+}
+// 
+// ctx.beginPath();
+// ctx.moveTo(100, 100);
+// ctx.lineTo(400, 200);
+// ctx.lineTo(50, 400);
+// ctx.lineTo(100, 100);
+// ctx.stroke();
+
+triangle(100, 100, 400, 200, 50, 400);
+
+</script>
+
+</body>
+</html>

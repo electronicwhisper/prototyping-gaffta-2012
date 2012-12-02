@@ -41,23 +41,15 @@ function makeDraggable(element) {
 // makeDraggable($("#mover2"));
 
 
-
-function makeMover(name) {
+function makeMover() {
   var mover = $("<div style='position: absolute; top: 0px; left: 0px; width: 200px; height: 200px; background-color: #f00'>mover</div>");
-  mover.html(name);
-  mover.attr("id", name);
   $("body").append(mover);
   makeDraggable(mover);
-  return mover;
 }
 
-var allMovers = [];
-
-for (var i = 0; i < 30; i++) {
-  allMovers[i] = makeMover("mover named "+i);
-}
-
-
+makeMover();
+makeMover();
+makeMover();
 
 
 

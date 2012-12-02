@@ -1,0 +1,41 @@
+<html>
+<body>
+
+<div id="mover" style="position: absolute; top: 0px; left: 0px; width: 200px; height: 200px; background-color: #f00">test</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script>
+
+
+var dragging = false;
+var offsetX;
+var offsetY;
+
+
+$("#mover").on("mousedown", function (e) {
+  var position = $("#mover").position();
+  
+  dragging = true;
+  offsetX = e.pageX - position.left;
+  offsetY = e.pageY - position.top;
+});
+
+$(document).on("mousemove", function (e) {
+  if (dragging) {
+    var x = e.pageX - offsetX;
+    var y = e.pageY - offsetY;
+    $("#mover").css("left", x);
+    $("#mover").css("top", y);
+  }
+});
+
+$(document).on("mouseup", function (e) {
+  dragging = false;
+})
+
+
+</script>
+
+</body>
+</html>

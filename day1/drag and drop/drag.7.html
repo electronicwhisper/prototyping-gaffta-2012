@@ -1,0 +1,49 @@
+<html>
+<body>
+
+<div id="mover" style="position: absolute; top: 0px; left: 0px; width: 200px; height: 200px; background-color: #f00">test</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script>
+
+
+function moveWithScale(scale) {
+  var move = function (e) {
+    
+    var x = e.pageX * scale;
+    var y = e.pageY * scale;
+    
+    $("#mover").css("left", x);
+    $("#mover").css("top", y);
+    
+    console.log("I moved the div to", x, y);
+  };
+  
+  console.log("I made the scaled move function", move);
+  
+  return move;
+}
+
+// var scale = 2;
+// 
+// var move = function (e) {
+//   
+//   var x = e.pageX * scale;
+//   var y = e.pageY * scale;
+//   
+//   $("#mover").css("left", x);
+//   $("#mover").css("top", y);
+// };
+
+
+console.log("about to register listener");
+
+$(document).on("mousemove", moveWithScale(3));
+
+console.log("listener registered");
+
+</script>
+
+</body>
+</html>
